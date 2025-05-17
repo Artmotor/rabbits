@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Калькулятор расчета рационов кроликов</title>
+  <title>foodRabbits - Данные из Google Sheets</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Калькулятор расчета рационов кроликов</h1>
+    <h1>foodRabbits - Данные из Google Sheets</h1>
     
     <div class="tabs">
       <button class="tab-btn active" data-tab="data-tab">Данные</button>
@@ -21,10 +21,19 @@
       </div>
     </div>
     
-    <div id="calculator-tab" class="tab-content">
-      <div class="calculator-container">
-        <h2>Калькулятор норм полезных веществ</h2>
-        <div class="calculator-form">
+	<div id="calculator-tab" class="tab-content">
+  <div class="calculator-container">
+    <h2>Калькулятор норм полезных веществ</h2>
+    
+    <div class="calculator-tabs">
+      <button class="calc-tab-btn active" data-calc-tab="simple-calc">Простой расчет</button>
+      <button class="calc-tab-btn" data-calc-tab="advanced-calc">Сложный расчет</button>
+    </div>
+    
+    <!-- Простой расчет -->
+    <div id="simple-calc" class="calc-tab-content" style="display: block;">
+      <!-- Существующая форма простого расчета -->
+	    <div class="calculator-form">
           <div class="form-group">
             <label for="rabbits-count">Количество кроликов:</label>
             <input type="number" id="rabbits-count" min="1" value="1">
@@ -59,8 +68,52 @@
         </div>
       </div>
     </div>
+    
+    <!-- Сложный расчет -->
+    <div id="advanced-calc" class="calc-tab-content">
+      <div class="advanced-form">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>Период жизни</th>
+              <th>Масса (кг)</th>
+              <th>Количество</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="params-body">
+            <tr>
+              <td>
+                <select class="life-period">
+                  <option value="non-breeding">Неслучный</option>
+                  <option value="breeding">Случный</option>
+                  <option value="pregnant">Сукрольный</option>
+                </select>
+              </td>
+              <td>
+                <select class="rabbit-weight">
+                  <option value="4">4</option>
+                  <option value="4.5">4.5</option>
+                  <option value="5">5</option>
+                </select>
+              </td>
+              <td><input type="number" class="rabbits-count" min="1" value="1"></td>
+              <td><button class="remove-row-btn">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button id="add-row-btn" class="add-row-btn">+ Добавить строку</button>
+        <button id="calculate-advanced-btn" class="calculate-btn">Рассчитать</button>
+      </div>
+      
+      <div id="advanced-calculation-result" class="result-table" style="display: none;">
+        <h3>Результаты расчета</h3>
+        <div id="advanced-result-tables"></div>
+      </div>
+    </div>
   </div>
-
+</div>
+	
   <script src="script.js"></script>
   <script src="calculator.js"></script>
 </body>
