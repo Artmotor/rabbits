@@ -181,3 +181,113 @@ tr:hover {
   0% { left: -100%; }
   100% { left: 100%; }
 }
+/* Стили для вкладок калькулятора */
+.calculator-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.calc-tab-btn {
+  padding: 8px 16px;
+  background: #f1f1f1;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+}
+
+.calc-tab-btn.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.calc-tab-content {
+  display: none;
+}
+
+/* Стили для сложного расчета */
+.advanced-form {
+  margin-top: 20px;
+}
+
+.params-table {
+  width: 100%;
+  margin-bottom: 15px;
+  border-collapse: collapse;
+}
+
+.params-table th, .params-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.params-table th {
+  background-color: #f2f2f2;
+}
+
+.remove-row-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-row-btn {
+  padding: 8px 15px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#advanced-result-tables {
+  margin-top: 20px;
+}
+
+#advanced-result-tables h4 {
+  margin: 20px 0 10px 0;
+  color: #2c3e50;
+}
+.result-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.result-table th, .result-table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.result-table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.result-table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.result-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.result-table td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.result-table td:last-child {
+  font-weight: bold;
+  background-color: #e8f5e9;
+}
