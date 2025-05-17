@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор расчета рационов кроликов</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Калькулятор расчета рационов кроликов</h1>
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="data-tab">Данные</button>
+      <button class="tab-btn" data-tab="calculator-tab">Калькулятор норм</button>
+    </div>
+    
+    <div id="data-tab" class="tab-content" style="display: block;">
+      <div id="table-container">
+        <div class="loading">Загрузка данных...</div>
+      </div>
+    </div>
+    
+    <div id="calculator-tab" class="tab-content">
+      <div class="calculator-container">
+        <h2>Калькулятор норм полезных веществ</h2>
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="rabbits-count">Количество кроликов:</label>
+            <input type="number" id="rabbits-count" min="1" value="1">
+          </div>
+          
+          <div class="form-group">
+            <label for="life-period">Период жизни:</label>
+            <select id="life-period">
+              <option value="non-breeding">Неслучный период</option>
+              <option value="breeding">Случный период</option>
+              <option value="pregnant">Сукрольный период</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="rabbit-weight">Масса кролика (кг):</label>
+            <select id="rabbit-weight">
+              <option value="4">4</option>
+              <option value="4.5">4,5</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          
+          <button class="calculate-btn" id="calculate-btn">Рассчитать</button>
+        </div>
+        
+        <div id="calculation-result" class="result-table" style="display: none;">
+          <h3>Результаты расчета</h3>
+          <table id="result-table">
+            <!-- Результаты будут вставлены здесь -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>
